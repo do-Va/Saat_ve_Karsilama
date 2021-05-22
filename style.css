@@ -1,0 +1,220 @@
+/* 
+====================
+Global Style
+==============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 
+====================
+Main Style
+==============
+*/
+
+/* -------- Circle Animate Start -------- */
+.circle-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.circle2-container {
+  position: absolute;
+}
+
+.circle {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 38% 62% 65% 35% / 73% 54% 46% 27%;
+
+  background-image: linear-gradient(
+    to top,
+    hsl(301.15, 92.89%, 44.12%) 0%,
+    hsl(299.52, 68.37%, 49.96%) 9.8%,
+    hsl(296.81, 66.98%, 54.19%) 18.7%,
+    hsl(292.99, 66.11%, 57.94%) 26.6%,
+    hsl(287.95, 65.55%, 61.39%) 33.8%,
+    hsl(281.57, 65.26%, 64.62%) 40.4%,
+    hsl(273.74, 65.23%, 67.62%) 46.4%,
+    hsl(264.41, 65.46%, 70.41%) 52.1%,
+    hsl(253.61, 65.92%, 72.96%) 57.6%,
+    hsl(241.49, 66.59%, 75.26%) 62.9%,
+    hsl(230.29, 71.19%, 74.32%) 68.3%,
+    hsl(222.36, 75.4%, 73.03%) 73.8%,
+    hsl(216.82, 78.69%, 71.85%) 79.6%,
+    hsl(213.12, 81.06%, 70.89%) 85.8%,
+    hsl(210.96, 82.51%, 70.24%) 92.6%,
+    hsl(210.24, 83.01%, 70%) 100%
+  );
+}
+
+.circle-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: moveRotate linear 15s infinite;
+}
+
+.circle-2 {
+  top: 50%;
+  left: 50%;
+  width: 100rem;
+  height: 100rem;
+  position: relative;
+  border-radius: 50%;
+}
+
+.circle-2::before,
+.circle-2::after {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 101rem;
+  height: 110rem;
+  position: absolute;
+
+  background-image: linear-gradient(
+    to top,
+    rgba(217, 8, 214, 0.1) 0%,
+    rgba(212, 40, 215, 0.1) 9.8%,
+    rgba(208, 60, 216, 0.1) 18.7%,
+    rgba(202, 77, 219, 0.1) 26.6%,
+    rgba(195, 92, 221, 0.1) 33.8%,
+    rgba(187, 106, 224, 0.1) 40.4%,
+    rgba(180, 119, 226, 0.1) 46.4%,
+    rgba(170, 130, 229, 0.1) 52.1%,
+    rgba(161, 141, 232, 0.1) 57.6%,
+    rgba(151, 150, 234, 0.1) 62.9%,
+    rgba(143, 158, 236, 0.1) 68.3%,
+    rgba(134, 165, 238, 0.1) 73.8%,
+    rgba(127, 170, 240, 0.1) 79.6%,
+    rgba(121, 175, 241, 0.1) 85.8%,
+    rgba(116, 177, 242, 0.1) 92.6%,
+    rgba(115, 178, 242, 0.1) 100%
+  );
+  border-radius: 50%;
+
+  animation: rotate linear 15s infinite;
+  z-index: -2;
+}
+
+.circle-2::before {
+  animation-delay: 1s;
+}
+
+.circle-2::after {
+  animation-delay: -1s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveRotate {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(15rem);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(0);
+  }
+}
+/* -------- Circle Animate End -------- */
+
+/* -------- Content Start -------- */
+.content-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 70%;
+  max-width: 117rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5rem;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 24.7rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: rgb(116, 177, 242);
+  font-weight: 300;
+}
+
+.title-name {
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgb(210, 53, 216);
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.text-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 2rem;
+  color: rgb(116, 177, 242);
+}
+
+.text-special {
+  font-size: 2.8rem;
+  background: linear-gradient(to left, rgb(210, 53, 216), rgb(116, 177, 242));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.clock {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+/* -------- Content End -------- */
